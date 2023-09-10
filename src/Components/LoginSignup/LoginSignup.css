@@ -1,11 +1,10 @@
-/* Resetting default margin and padding for all elements */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Style for the entire page */
 .page {
   display: flex;
   justify-content: center;
@@ -14,7 +13,6 @@
   /* background-color: #CCE9E1; */
 }
 
-/* Style for the row containing columns */
 .row {
   display: flex;
   justify-content: space-between;
@@ -22,7 +20,7 @@
   width: 100%;
 }
 
-/* Style for the left column */
+/*left column */
 .column {
   flex: 1;
   display: flex;
@@ -44,26 +42,26 @@ html, body {
 }
 
 .column-fill {
-  flex-grow: 1; /* Fill available vertical space */
+  flex-grow: 1; 
 }
 
 .text1 {
   font-size: 90px;
   font-weight: 900;
   font-family: 'Poppins', sans-serif;
-  margin-top: 100px; /* Adjust margin as needed */
+  margin-top: 100px; 
   
 }
 
 .qr {
   /* size: 250px; */
   margin-left: 40px;
-  max-width: 100%; /* Adjust this value as needed */
+  max-width: 100%; 
     height: auto;
    margin-top: 50px;
 }
 
-/* Style for the right column */
+/* right column */
 .column1 {
   flex: 1;
   display: flex;
@@ -83,7 +81,7 @@ html, body {
   /* margin-bottom: 20px; */
 }
 
-/* Style for the input fields */
+/* input fields */
 .inputs {
   display: flex;
   flex-direction: column;
@@ -97,7 +95,7 @@ html, body {
   display: flex;
   align-items: center;
   margin-bottom: 35px;
-  width: 88%; /* Adjust the width as needed */
+  width: 88%; 
   background: #ffffff;
   border-radius: 50px;
   border-width: 2px;
@@ -118,24 +116,24 @@ html, body {
   font-size: 19px;
   font-family: 'Poppins', sans-serif;
   padding-left: 20px;
-  padding-right: 50px; /* Add padding-left for input text */
+  padding-right: 50px; 
 }
 
-/* Style for the Sign In and Sign In with Google buttons */
+/* Sign In and Google button*/
 .submit, .signgoogle {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #fff; /* Text color */
-  background: #000000; /* Button background color */
+  color: #fff; 
+  background: #000000; 
   border-radius: 30px;
   font-size: 19px;
   font-weight: 700;
   cursor: pointer;
   font-family: 'Poppins', sans-serif;
   height: 55px;
-  width: 88%; /* Adjust the width as needed */
-  margin-bottom: 30px; /* Adjust margin as needed */
+  width: 88%; 
+  margin-bottom: 30px; 
 }
 .submit:hover{
   background-color:#323837
@@ -144,21 +142,21 @@ html, body {
   background-color:#e6edec
 }
 .signgoogle {
-  background: #ffffff; /* Sign In with Google button background color */
-  color: #000000; /* Text color for Sign In with Google */
-  border: 2px solid #000000; /* Border for Sign In with Google button */
+  background: #ffffff; 
+  color: #000000; 
+  border: 2px solid #000000; 
 }
 
-/* Style for the Google icon */
+/* Google icon */
 .google {
   margin-left: 10px;
 }
 
 
-/* Style for the eye icon */
+/* eye icon */
 .eye {
   position: absolute;
-    right: 15px; /* Adjust the right position to align the eye icon */
+    right: 15px; 
     top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
