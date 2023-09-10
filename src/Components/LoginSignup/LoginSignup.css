@@ -1,155 +1,165 @@
-
-
-
-
-
-
-
 /* Resetting default margin and padding for all elements */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  /* Style for the entire page */
-  .page {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    /* background-color: #CCE9E1;  */
-  }
-  
-  /* Style for the row containing columns */
-  .row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-  }
-  
-  /* Style for the left column */
-  .column {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    position: relative; 
-    max-width: 60%;
-    background-color: #cce9e1;
-    height: 100vh;
-    border-top-right-radius: 60px;
-    border-bottom-right-radius: 60px;
-    
-  }
-  html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-}
-  .column-fill {
-    flex-grow: 1; /* Fill available vertical space */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-  .text1 {
-    font-size: 90px;
-    font-weight: 900;
-    font-family: 'Poppins', sans-serif;
-    margin-top: 100px; /* Adjust margin as needed */
-  }
-  
-  .qr {
-    /* size: 250px; 
-     */
-     margin-left: 20px;
-  }
-  
-  /* Style for the right column */
-  .column1 {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    max-width: 40%;
-    height: 100vh;
-    /* margin-top: 120px; */
-  }
-  
-  .text2 {
-    font-size: 75px;
-    font-weight:lighter;
-    font-family: 'Poppins', sans-serif;
-    margin-top: 100px;
+/* Style for the entire page */
+.page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  /* background-color: #CCE9E1; */
+}
 
-    /* margin-bottom: 20px;  */
-  }
+/* Style for the row containing columns */
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+/* Style for the left column */
+.column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  max-width: 60%;
+  background-color: #cce9e1;
+  height: 100vh;
+  border-top-right-radius: 60px;
+  border-bottom-right-radius: 60px;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
+
+.column-fill {
+  flex-grow: 1; /* Fill available vertical space */
+}
+
+.text1 {
+  font-size: 90px;
+  font-weight: 900;
+  font-family: 'Poppins', sans-serif;
+  margin-top: 100px; /* Adjust margin as needed */
   
-  /* Style for the input fields */
-  .inputs{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+}
+
+.qr {
+  /* size: 250px; */
+  margin-left: 40px;
+  max-width: 100%; /* Adjust this value as needed */
+    height: auto;
+   margin-top: 50px;
+}
+
+/* Style for the right column */
+.column1 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 40%;
+  height: 100vh;
+  /* margin-top: 120px; */
+}
+
+.text2 {
+  font-size: 75px;
+  font-weight: lighter;
+  font-family: 'Poppins', sans-serif;
+  margin-top: 100px;
+  /* margin-bottom: 20px; */
+}
+
+/* Style for the input fields */
+.inputs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   height: 100%;
-  margin-top:-80px;
+  margin-top: -80px;
+}
 
-  }
-  .input {
-    display: flex;
-    align-items: center;
-    margin-bottom: 35px;
-    width: 88%; /* Adjust the width as needed */
-    background: #ffffff;
-    border-radius: 50px;
-    border-width: 2px;
-    border-color: #000000;
-    border-style: solid;
-  }
-  
-  .input input {
-    flex: 1;
-    height: 50px;
-    width: 88%;
-    background: transparent;
-    border: none;
-    border-radius: 50px;
-    outline: none;
-    color: #797979;
-    font-size: 19px;
-    font-family: 'Poppins', sans-serif;
-    padding-left: 20px;
-    padding-right: 20px; /* Add padding-left for input text */
-  }
-  
-  /* Style for the Sign In and Sign In with Google buttons */
-  .submit,
-  .signgoogle {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff; /* Text color */
-    background: #000000; /* Button background color */
-    border-radius: 30px;
-    font-size: 19px;
-    font-weight: 700;
+.input {
+  display: flex;
+  align-items: center;
+  margin-bottom: 35px;
+  width: 88%; /* Adjust the width as needed */
+  background: #ffffff;
+  border-radius: 50px;
+  border-width: 2px;
+  border-color: #000000;
+  border-style: solid;
+  position: relative;
+}
+
+.input input {
+  flex: 1;
+  height: 50px;
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-radius: 50px;
+  outline: none;
+  color: #797979;
+  font-size: 19px;
+  font-family: 'Poppins', sans-serif;
+  padding-left: 20px;
+  padding-right: 50px; /* Add padding-left for input text */
+}
+
+/* Style for the Sign In and Sign In with Google buttons */
+.submit, .signgoogle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff; /* Text color */
+  background: #000000; /* Button background color */
+  border-radius: 30px;
+  font-size: 19px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  height: 55px;
+  width: 88%; /* Adjust the width as needed */
+  margin-bottom: 30px; /* Adjust margin as needed */
+}
+.submit:hover{
+  background-color:#323837
+}
+.signgoogle:hover{
+  background-color:#e6edec
+}
+.signgoogle {
+  background: #ffffff; /* Sign In with Google button background color */
+  color: #000000; /* Text color for Sign In with Google */
+  border: 2px solid #000000; /* Border for Sign In with Google button */
+}
+
+/* Style for the Google icon */
+.google {
+  margin-left: 10px;
+}
+
+
+/* Style for the eye icon */
+.eye {
+  position: absolute;
+    right: 15px; /* Adjust the right position to align the eye icon */
+    top: 50%;
+    transform: translateY(-50%);
     cursor: pointer;
-    font-family: 'Poppins', sans-serif;
-    height: 55px;
-    width: 88%; /* Adjust the width as needed */
-    margin-bottom: 30px; /* Adjust margin as needed */
-  }
-  
-  .signgoogle {
-    background: #ffffff; /* Sign In with Google button background color */
-    color: #000000; /* Text color for Sign In with Google */
-    border: 2px solid #000000; /* Border for Sign In with Google button */
-  }
-  
-  /* Style for the Google icon */
-  .google {
-    margin-left: 10px;
-  }
-  
+}
