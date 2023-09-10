@@ -6,7 +6,6 @@ import g_image from '../Assets/google.png';
 import eye from '../Assets/eye.png';
 import eye2 from '../Assets/eye2.png';
 
-
 const LoginSignup = () => {
     const [action, setAction] = useState("Sign Up");
     const [password, setPassword] = useState("");
@@ -15,9 +14,11 @@ const LoginSignup = () => {
     const togglePasswordVisibility = () => {
         setShowPassword(!showPassword);
     };
+
     const handlePasswordChange = (e) => {
         setPassword(e.target.value);
     };
+
     return (
         <>
             <div className="page">
@@ -28,28 +29,37 @@ const LoginSignup = () => {
                         <div className="column-fill"></div>
                     </div>
                     <div className="column1">
-                        <div className="text2">{action === "Sign Up" ? "Register" : "Login"}</div>
+                        <div className="text2">{action === "Sign Up" ? "Sign Up" : "Login"}</div>
                         <div className="inputs">
-                            <div className="input">
-                                <input type="text" placeholder="Enter Full Name" />
-                            </div>
+                            {action === "Sign Up" && (
+                                <div className="input">
+                                    
+                                    <input type="text" placeholder="Name" />
+                                </div>
+                            )}
                             <div className="input">
                                 <input type="email" placeholder="Enter Email" />
                             </div>
                             <div className="input">
-                                <input type={showPassword ? "text" : "password"} placeholder="Password"
-                                value={password}
-                                onChange={handlePasswordChange} />
-                              {password && (
-                                <img
-                                    src={showPassword ? eye : eye2}
-                                    alt="Toggle Password Visibility"
-                                    className="eye"
-                                    onClick={togglePasswordVisibility}
+                                <input
+                                    type={showPassword ? "text" : "password"}
+                                    placeholder="Password"
+                                    value={password}
+                                    onChange={handlePasswordChange}
                                 />
-                            )}
+                                {password && (
+                                    <img
+                                        src={showPassword ? eye : eye2}
+                                        alt="Toggle Password Visibility"
+                                        className="eye"
+                                        onClick={togglePasswordVisibility}
+                                    />
+                                )}
                             </div>
-                            <div className="submit">Sign In</div>
+                            <div className="submit-container">
+                                <div className={action === "Login" ? "submit gray" : "submit"} onClick={() => { setAction("Sign Up") }}>Sign Up</div>
+                                <div className={action === "Sign Up" ? "submit gray" : "submit"} onClick={() => { setAction("Login") }}>Login</div>
+                            </div>
                             <div className="signgoogle">
                                 Sign In with Google
                                 <img className="google" src={g_image} alt="" />
