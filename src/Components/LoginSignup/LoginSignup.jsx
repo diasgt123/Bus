@@ -2,22 +2,72 @@ import React, { useState } from "react";
 import './LoginSignup.css';
 
 import qr_image from '../Assets/qr.png';
-import g_image from '../Assets/google.png';
+// import g_image from '../Assets/google.png';
 import eye from '../Assets/eye.png';
 import eye2 from '../Assets/eye2.png';
 
 
 const LoginSignup = () => {
     const [action, setAction] = useState("Sign Up");
+    const [name, setName] = useState(""); // Add state for name
+    const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [showPassword, setShowPassword] = useState(false);
 
     const togglePasswordVisibility = () => {
         setShowPassword(!showPassword);
     };
+    const handleNameChange = (e) => {
+        setName(e.target.value);
+    };
+
+    const handleEmailChange = (e) => {
+        setEmail(e.target.value);
+    };
     const handlePasswordChange = (e) => {
         setPassword(e.target.value);
     };
+
+
+    const handleSignUp =()=>{
+        fetch("/signup",{
+            method:"POST",
+            body:JSON.stringify({name,email,password}),
+            headers:{
+                "Content-Type":"application/json",
+            },
+        }
+        )
+        .then((response)=>response.json())
+        .then((data) => {
+            //routing logic
+        })
+    };
+
+        const handleLogin =()=>{
+            fetch("/login",{
+                method:"POST",
+                body:JSON.stringify({email,password}),
+                headers:{
+                    "Content-Type":"application/json",
+                },
+            }
+            )
+            .then((response)=>response.json())
+            .then((data) => {
+                //routing logic
+            })
+    };
+
+    const handleSubmit = () => {
+        if (action === "Sign Up") {
+            handleSignUp();
+        } else {
+            handleLogin();
+        }
+    };
+
+
     return (
         <>
             <div className="page">
@@ -28,16 +78,16 @@ const LoginSignup = () => {
                         <div className="column-fill"></div>
                     </div>
                     <div className="column1">
-                    <div className="submit-container">
+                           
+                        {/* <div className="text2">{action === "Sign Up" ? "Register" : "Login"}</div> */}
+                        <div className="inputs">
+                        <div className="submit-container">
                                 <div className={action==="Login"?"submit gray":"submit"}onClick={()=>{setAction("Sign Up")}}>Sign Up</div>
                                 <div className={action==="Sign Up"?"submit gray":"submit"}onClick={()=>{setAction("Login")}}>Login</div>
                             </div>
-                        {/* <div className="text2">{action === "Sign Up" ? "Register" : "Login"}</div> */}
-                        <div className="inputs">
-                                     {action==="Login"?<div></div>:<div className="input">
-
-                                    <input type="text" placeholder="Name"/>
-                                </div>}
+                            {action==="Login"?<div></div>:<div className="input">
+                            <input type="text" placeholder="Name"/>
+                            </div>}
                             <div className="input">
                                 <input type="email" placeholder="Enter Email" />
                             </div>
@@ -55,10 +105,10 @@ const LoginSignup = () => {
                             )}
                             </div>
                             <div className="submit">Submit</div>
-                            <div className="signgoogle">
+                            {/* <div className="signgoogle">
                                 Sign In with Google
                                 <img className="google" src={g_image} alt="" />
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>
