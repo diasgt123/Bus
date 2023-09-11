@@ -82,8 +82,8 @@ const LoginSignup = () => {
                         {/* <div className="text2">{action === "Sign Up" ? "Register" : "Login"}</div> */}
                         <div className="inputs">
                         <div className="submit-container">
-                                <div className={action==="Login"?"submit gray":"submit"}onClick={()=>{setAction("Sign Up")}}>Sign Up</div>
-                                <div className={action==="Sign Up"?"submit gray":"submit"}onClick={()=>{setAction("Login")}}>Login</div>
+                                <button className={action==="Login"?"submit gray":"submit"}onClick={()=>{setAction("Sign Up")}}>Sign Up</button>
+                                <button className={action==="Sign Up"?"submit gray":"submit"}onClick={()=>{setAction("Login")}}>Login</button>
                             </div>
                             {action==="Login"?<div></div>:<div className="input">
                             <input type="text" placeholder="Name"/>
