@@ -13,6 +13,7 @@ const LoginSignup = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [showPassword, setShowPassword] = useState(false);
+    const [confirmPassword, setConfirmPassword] = useState(""); // Step 2
 
     const togglePasswordVisibility = () => {
         setShowPassword(!showPassword);
@@ -27,7 +28,9 @@ const LoginSignup = () => {
     const handlePasswordChange = (e) => {
         setPassword(e.target.value);
     };
-
+    const handleConfirmPasswordChange = (e) => {
+        setConfirmPassword(e.target.value);
+      };
 
     const handleSignUp =()=>{
         fetch("/signup",{
@@ -81,7 +84,7 @@ const LoginSignup = () => {
                            
                         {/* <div className="text2">{action === "Sign Up" ? "Register" : "Login"}</div> */}
                         <div className="inputs">
-                        <div className="submit-container">
+                            <div className="submit-container">
                                 <button className={action==="Login"?"submit gray":"submit"}onClick={()=>{setAction("Sign Up")}}>Sign Up</button>
                                 <button className={action==="Sign Up"?"submit gray":"submit"}onClick={()=>{setAction("Login")}}>Login</button>
                             </div>
@@ -104,7 +107,25 @@ const LoginSignup = () => {
                                 />
                             )}
                             </div>
-                            <div className="submit">Submit</div>
+                            {action==="Login"?<div></div>:<div className="input">
+                            <input
+                                type="password"
+                                placeholder="Confirm Password"
+                                value={confirmPassword}
+                                onChange={handleConfirmPasswordChange} 
+                            />
+                            {password && (
+                                <img
+                                src={showPassword ? eye : eye2}
+                                alt="Toggle Password Visibility"
+                                className="eye"
+                                onClick={togglePasswordVisibility}
+                                />
+                            )}
+                            </div>
+                            }
+                            
+                            <button onClick={handleSubmit}className="submit">Submit</button>
                             {/* <div className="signgoogle">
                                 Sign In with Google
                                 <img className="google" src={g_image} alt="" />
